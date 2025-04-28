@@ -1,0 +1,179 @@
+/* General Body Styling (Already Present, Slightly Modified) */
+body {
+  /* background-image: url("./images/customchat.jpg"); */
+  background-size: cover; /* Scales the image to cover the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 90vh; /* Adjusted to full viewport height for better coverage */
+  margin: 0; /* Remove default margin for better alignment */
+  font-family: "Poppins", sans-serif; /* Ensure consistency with the React component */
+}
+
+/* Container Styling (Modified for Better Appearance) */
+.green-harvest-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  max-width: 600px; /* Slightly wider for better readability */
+  margin: 20px auto; /* Center the container */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for better contrast with background */
+  border-radius: 12px; /* Softer, more modern border radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for a floating effect */
+  padding: 20px; /* Consistent padding */
+}
+
+/* Chat Window Styling (Enhanced for Better Scroll and Look) */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px; /* More padding for better spacing */
+  background-color: #f9f9f9; /* Light gray background for better contrast */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0; /* Subtle border for definition */
+}
+
+/* Scrollbar Styling for Chat Window */
+.chat-window::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #2e7d32; /* Match the theme color */
+  border-radius: 4px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Light track for contrast */
+}
+
+/* Chat Bubble Styling (Enhanced for Visual Appeal) */
+.chat-bubble {
+  max-width: 70%;
+  padding: 12px 18px; /* Slightly more padding for better readability */
+  border-radius: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* User Bubble Styling */
+.chat-bubble.user {
+  background-color: #2e7d32; /* Match the theme color from the screenshot */
+  color: white;
+  margin-left: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Bot Bubble Styling */
+.chat-bubble.bot {
+  background-color: #e0e0e0; /* Light gray for bot messages */
+  color: black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect for Chat Bubbles */
+.chat-bubble:hover {
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Avatar Styling (Enhanced for Consistency) */
+.chat-bubble .MuiAvatar-root {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff; /* White border for avatars */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for avatars */
+}
+
+/* Timestamp Styling (Improved Readability) */
+.chat-bubble .MuiTypography-caption {
+  font-size: 0.7rem; /* Smaller font for timestamp */
+  opacity: 0.6; /* Slightly more transparent */
+}
+
+/* Input and Button Section Styling */
+.input-section {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Consistent spacing between elements */
+}
+
+/* TextField Styling (For Name and Question Input) */
+.MuiTextField-root {
+  background-color: #fff; /* White background for inputs */
+  border-radius: 8px; /* Softer border radius */
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  border-color: #2e7d32; /* Match theme color */
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #1b5e20; /* Darker shade on hover */
+}
+
+/* Button Styling (Enhanced for Consistency) */
+.MuiButton-contained {
+  background-color: #2e7d32; /* Theme color */
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600; /* Bolder text for buttons */
+  padding: 10px 20px; /* More padding for better click area */
+  border-radius: 8px; /* Softer border radius */
+  transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.MuiButton-contained:hover {
+  background-color: #1b5e20; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Language Selector Styling (Enhanced for Consistency) */
+.MuiSelect-outlined {
+  background-color: #fff; /* White background */
+  border-radius: 8px; /* Softer border radius */
+  height: 40px; /* Consistent height */
+}
+
+.MuiSelect-outlined:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+/* Header Styling (Improved for Better Alignment) */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title Styling */
+.header-section .MuiTypography-h4 {
+  font-weight: 700; /* Bolder title */
+  color: #2e7d32; /* Match theme color */
+}
+
+/* Loading State for Button */
+.MuiButton-contained:disabled {
+  background-color: #cccccc; /* Grayed out when disabled */
+  color: #666666;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .green-harvest-container {
+    margin: 10px;
+    padding: 15px;
+    height: 90vh; /* More height on mobile */
+  }
+
+  .header-section .MuiTypography-h4 {
+    font-size: 1.5rem; /* Smaller title on mobile */
+  }
+
+  .chat-bubble {
+    max-width: 85%; /* Wider bubbles on mobile */
+  }
+}
