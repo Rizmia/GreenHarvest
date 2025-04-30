@@ -1,0 +1,83 @@
+.exportIncome-row {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.exportIncome-row:hover {
+  background-color: #f1f1f1;
+}
+
+.exportIncome-cell {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.exportIncome-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Update button */
+.exportIncome-update-link {
+  background-color: #5bc0de;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.exportIncome-update-link:hover {
+  background-color: #31b0d5;
+}
+
+/* Delete button */
+.exportIncome-delete-btn {
+  background-color: #d9534f;
+  color: #f0f0f0;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.exportIncome-delete-btn:hover {
+  background-color: #c9302c;
+}
+
+/* If you are showing export incomes in card format somewhere */
+.exportIncome-card {
+  background-color: #ded6d6;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.exportIncome-card:hover {
+  transform: scale(1.05);
+}
+
+.exportIncome-card h1 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.exportIncome-card .exportIncome-details {
+  margin-left: 15px;
+}
+
+.exportIncome-card .exportIncome-details p {
+  font-size: 14px;
+  margin: 5px 0;
+}

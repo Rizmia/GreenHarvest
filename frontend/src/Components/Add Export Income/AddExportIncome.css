@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('./addBackground.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.addExport-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.addExport-form-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+}
+
+.addExport-heading {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.addExport-back-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.addExport-back-btn:hover {
+  background-color: #0056b3;
+}
+
+.addExport-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.addExport-field {
+  margin-bottom: 15px;
+}
+
+.addExport-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.addExport-input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.addExport-error {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.addExport-submit-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.addExport-submit-btn:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}

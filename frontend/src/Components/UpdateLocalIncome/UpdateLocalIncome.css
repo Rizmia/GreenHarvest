@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('./updateBackground.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.updateLocal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 60px; /* Adjust if navbar exists */
+}
+
+.updateLocal-form-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  transition: all 0.3s ease-in-out;
+}
+
+.updateLocal-form-container:hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.updateLocal-error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.updateLocal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.updateLocal-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.updateLocal-form input,
+.updateLocal-form select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.updateLocal-submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.updateLocal-submit-button:hover {
+  background-color: #218838;
+}
+
+.updateLocal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.updateLocal-back-button {
+  background-color: rgba(44, 62, 80, 0.85);
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.updateLocal-back-button:hover {
+  background-color: rgba(34, 49, 63, 0.95);
+}

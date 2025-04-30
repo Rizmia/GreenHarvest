@@ -1,0 +1,114 @@
+.exportDetails-page {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .exportDetails-heading {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .exportDetails-table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .exportDetails-income-table {
+    width: 100%;
+    background-color: rgba(237, 231, 231, 0.7); /* Transparent background */
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .exportDetails-income-table tr:nth-child(even) {
+    background-color: rgba(198, 231, 206, 0.7); /* Light green for even rows */
+  }
+  
+  .exportDetails-income-table th,
+  .exportDetails-income-table td {
+    border: 1px solid rgba(204, 204, 204, 0.7);
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .exportDetails-income-table th {
+    background-color: rgba(128, 234, 62, 0.8); /* Transparent green header */
+    color: #333;
+  }
+  
+  /* Column Specific Widths */
+  .col-id {
+    min-width: 180px;
+    max-width: 250px;
+    word-break: break-word;
+  }
+  
+  .col-description {
+    min-width: 200px;
+  }
+  
+  .col-actions {
+    min-width: 180px;
+  }
+  
+  /* Buttons and Links */
+  .exportDetails-update-link,
+  .exportDetails-delete-btn {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .exportDetails-update-link {
+    background-color: rgba(25, 16, 98, 0.8);
+    color: white;
+  }
+  
+  .exportDetails-update-link:hover {
+    background-color: rgba(20, 122, 154, 0.8);
+  }
+  
+  .exportDetails-delete-btn {
+    background-color: rgba(188, 32, 26, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .exportDetails-delete-btn:hover {
+    background-color: rgba(228, 113, 109, 0.8);
+  }
+  
+  .exportDetails-back-button {
+    margin-bottom: 20px;
+    background-color: rgba(44, 62, 80, 0.85);
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .exportDetails-back-button:hover {
+    background-color: rgba(34, 49, 63, 0.95);
+  }
+  
+  .exportDetails-no-data {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+  }
+  

@@ -1,0 +1,71 @@
+.localIncome-card {
+  background-color: #ded6d6;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.localIncome-card:hover {
+  transform: scale(1.05);
+}
+
+.localIncome-card h1 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.localIncome-card .localIncome-details {
+  margin-left: 15px;
+}
+
+.localIncome-card .localIncome-details p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.localIncome-card button,
+.localIncome-delete-btn {
+  background-color: #d9534f;
+  color: rgb(221, 213, 213);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.localIncome-card button:hover,
+.localIncome-delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.localIncome-card .localIncome-update-link,
+.localIncome-update-link {
+  background-color: #5bc0de;
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.localIncome-card .localIncome-update-link:hover,
+.localIncome-update-link:hover {
+  background-color: #31b0d5;
+}
+
+/* Table Specific Styling */
+.localIncome-row {
+  background-color: #f9f9f9;
+}
+
+.localIncome-cell {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
