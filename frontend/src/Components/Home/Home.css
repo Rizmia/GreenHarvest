@@ -1,0 +1,122 @@
+/* Home.css */
+.home-container {
+  background-image: url('F:\3RD_YEAR\2ND_SEM\ITPM_Project\frontend\src\Images\pic2.jpg'); /* Relative path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Optional: Fixed background for parallax effect */
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: #fff; /* White text for contrast */
+}
+
+
+/* Semi-transparent overlay for better readability */
+.home-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1;
+}
+
+
+/* Ensure content is above the overlay */
+.home-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Title Styling */
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+}
+
+/* Introduction Styling */
+.home-intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.home-features {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  color: #333; /* Dark text for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-features h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.home-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.home-features li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Buttons Container */
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* General Button Styling */
+.home-btn {
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  color: #fff;
+}
+
+.home-btn:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* History Button Styling */
+.history-btn {
+  background-color: #3498db; /* Blue */
+}
+
+.history-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Add Button Styling */
+.add-btn {
+  background-color: #2ecc71; /* Green */
+}
+
+.add-btn:hover {
+  background-color: #27ae60;
+}
+
+.expenses-btn{
+  background-color: #34db3f;
+}

@@ -1,0 +1,118 @@
+/* Crop_History.css */
+.crop-history-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative; /* For positioning the back button */
+  min-height: 100vh; /* Full viewport height */
+  background-image: url('F:\3RD_YEAR\2ND_SEM\ITPM_Project\frontend\src\Images\pic3.webp'); /* Adjust path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Optional: Fixed background for parallax effect */
+}
+
+/* Semi-transparent overlay for readability */
+.crop-history-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* White overlay for subtle transparency */
+  z-index: 1;
+
+  
+}
+
+/* Ensure content is above the overlay */
+.crop-history-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.back-btn button {
+  background-color: #ff9800; /* Orange for the back button */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-btn button:hover {
+  background-color: #f57c00;
+}
+
+.crop-history-container h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-btn button {
+  background-color: #2196f3;
+  color: white;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.add-btn button:hover {
+  background-color: #1976d2;
+}
+
+.crop-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.crop-table th,
+.crop-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #000; /* Black border to separate columns and rows */
+}
+
+.crop-table th {
+  background-color: rgb(63, 197, 76); /* Updated background color */
+  color: #000; /* Black font color */
+  font-weight: 600;
+}
+
+.crop-table tr:hover {
+  background-color: #f9f9f9;
+  margin-right: 10px;
+
+}
+
+.no-records {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
