@@ -6,7 +6,7 @@ const regiSchema = new Schema({
         type: String,
         required: true,
     },
-    gmail: {
+    email: {  // Changed 'gmail' to 'email'
         type: String,
         required: true,
     },
@@ -15,16 +15,14 @@ const regiSchema = new Schema({
         required: true,
     },
     cpassword: {
-        type: String, // ✅ Use Date type
+        type: String,
         required: true,
     },
     number: {
-        type: Number, // ✅ Use Date type instead of String
+        type: Number,
         required: true,
     },
- 
 });
 
-// ✅ Correct export format
+// Correct export format
 module.exports = mongoose.model("Register", regiSchema);
-
