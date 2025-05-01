@@ -1,33 +1,28 @@
-/* Home.css */
 .home-container {
-  background-image: url('C:\Users\ASUS\Documents\GreenHarvest\frontend\src\Images\pic2.jpg'); /* Relative path */
+  background-image: url('C:/Users/ASUS/Documents/GreenHarvest/frontend/src/Images/pic2.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Optional: Fixed background for parallax effect */
-  min-height: 100vh; /* Full viewport height */
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  color: #fff; /* White text for contrast */
+  color: #fff;
 }
 
-
-/* Semi-transparent overlay for better readability */
 .home-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-
-/* Ensure content is above the overlay */
 .home-content {
   position: relative;
   z-index: 2;
@@ -35,15 +30,13 @@
   padding: 20px;
 }
 
-/* Title Styling */
 .home-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Introduction Styling */
 .home-intro {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -51,10 +44,9 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Features Section */
 .home-features {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  color: #333; /* Dark text for contrast */
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -77,46 +69,16 @@
   line-height: 1.5;
 }
 
-/* Buttons Container */
 .home-buttons {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
 
-/* General Button Styling */
 .home-btn {
   font-size: 1.1rem;
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  color: #fff;
-}
-
-.home-btn:hover {
-  transform: scale(1.05); /* Slight scale effect on hover */
-}
-
-/* History Button Styling */
-.history-btn {
-  background-color: #3498db; /* Blue */
-}
-
-.history-btn:hover {
-  background-color: #2980b9;
-}
-
-/* Add Button Styling */
-.add-btn {
-  background-color: #2ecc71; /* Green */
-}
-
-.add-btn:hover {
-  background-color: #27ae60;
-}
-
-.expenses-btn{
-  background-color: #34db3f;
-}
+  transition: background-color 0}

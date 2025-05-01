@@ -1,22 +1,17 @@
-/* Crop_Update.css */
-
-/* Add background image to the main container */
 .crop-update-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
-  /* Add background image */
-  background-image: url('C:\Users\ASUS\Documents\GreenHarvest\frontend\src\Images\pic4.jpg'); /* Example image URL */
+  background-image: url('C:/Users/ASUS/Documents/GreenHarvest/frontend/src/Images/pic4.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh; /* Ensures the background covers the full height */
+  min-height: 100vh;
 }
 
-/* Adjust the form container to have a semi-transparent background for better readability */
 .update-form-container {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -94,7 +89,21 @@ input:focus {
   background-color: #27ae60;
 }
 
-/* Popup Styles */
+.add-custom-btn {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.add-custom-btn:hover {
+  background-color: #1976d2;
+}
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -160,7 +169,6 @@ input:focus {
   background-color: #c0392b;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   .crop-update-container {
     padding: 10px;
@@ -175,3 +183,4 @@ input:focus {
     margin: 0 10px;
   }
 }
+

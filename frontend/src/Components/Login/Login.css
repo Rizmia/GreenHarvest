@@ -1,4 +1,4 @@
-.login-container {
+/* .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,4 +53,63 @@
     font-size: 12px;
     margin-top: -10px;
     margin-bottom: 10px;
+  } */
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('C:/Users/ASUS/Documents/GreenHarvest/frontend/src/Images/pic2.jpg');
+    background-size: cover;
+    background-position: center;
   }
+  
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  

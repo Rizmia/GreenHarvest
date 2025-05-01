@@ -1,3 +1,82 @@
+// // import React, { useEffect, useState } from 'react';
+// // import axios from 'axios';
+// // import { Link } from 'react-router-dom';
+// // import Crops from '../Crops/Crops';
+// // import './Crop_History.css';
+
+// // const URL = 'http://localhost:5000/CropR';
+
+// // const fetchHandler = async () => {
+// //   try {
+// //     const res = await axios.get(URL);
+// //     return res.data;
+// //   } catch (error) {
+// //     console.error('Error fetching data:', error);
+// //     return { crops: [] };
+// //   }
+// // };
+
+// // function Crop_History() {
+// //   const [crops, setCrops] = useState([]);
+// //   const [loading, setLoading] = useState(true);
+
+// //   // Fetch crops on mount
+// //   useEffect(() => {
+// //     setLoading(true);
+// //     fetchHandler()
+// //       .then((data) => setCrops(data.crops || []))
+// //       .finally(() => setLoading(false));
+// //   }, []);
+
+// //   // Handle deletion by updating state
+// //   const handleDelete = (id) => {
+// //     setCrops((prevCrops) => prevCrops.filter((crop) => crop._id !== id));
+// //   };
+
+// //   return (
+// //     <div className="crop-history-container">
+// //       <Link to="/" className="back-btn">
+// //         <button>Back</button>
+// //       </Link>
+// //       <h1>Crop History</h1>
+// //       <Link to="/Crop_Add" className="add-btn">
+// //         <button>ADD CROP DETAILS</button>
+// //       </Link>
+// //       {loading ? (
+// //         <p className="loading">Loading crops...</p>
+// //       ) : crops.length > 0 ? (
+// //         <table className="crop-table">
+// //           <thead>
+// //             <tr>
+// //               <th>ID</th>
+// //               <th>Crop Name</th>
+// //               <th>Crop Quantity</th>
+// //               <th>Soil Type</th>
+// //               <th>Planting Date</th>
+// //               <th>Harvest Time</th>
+// //               <th>Fertilizer Type</th>
+// //               <th>Fertilizer Quantity</th>
+// //               <th>Water Requirement</th>
+// //               <th>Expected Yield</th>
+// //               <th>Weather Conditions</th>
+// //               <th>Action</th>
+// //             </tr>
+// //           </thead>
+// //           <tbody>
+// //             {crops.map((crop) => (
+// //               <Crops key={crop._id} user={crop} onDelete={handleDelete} />
+// //             ))}
+// //           </tbody>
+// //         </table>
+// //       ) : (
+// //         <p className="no-records">No crop records found.</p>
+// //       )}
+// //     </div>
+// //   );
+// // }
+
+// // export default Crop_History;
+
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import { Link } from 'react-router-dom';
@@ -20,7 +99,6 @@
 //   const [crops, setCrops] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
-//   // Fetch crops on mount
 //   useEffect(() => {
 //     setLoading(true);
 //     fetchHandler()
@@ -28,10 +106,14 @@
 //       .finally(() => setLoading(false));
 //   }, []);
 
-//   // Handle deletion by updating state
 //   const handleDelete = (id) => {
 //     setCrops((prevCrops) => prevCrops.filter((crop) => crop._id !== id));
 //   };
+
+//   // Get all possible custom field names across all crops
+//   const allCustomFields = Array.from(
+//     new Set(crops.flatMap(crop => Object.keys(crop.customFields || {})))
+//   );
 
 //   return (
 //     <div className="crop-history-container">
@@ -59,12 +141,15 @@
 //               <th>Water Requirement</th>
 //               <th>Expected Yield</th>
 //               <th>Weather Conditions</th>
+//               {allCustomFields.map((field) => (
+//                 <th key={field}>{field.replace(/_/g, " ")}</th>
+//               ))}
 //               <th>Action</th>
 //             </tr>
 //           </thead>
 //           <tbody>
 //             {crops.map((crop) => (
-//               <Crops key={crop._id} user={crop} onDelete={handleDelete} />
+//               <Crops key={crop._id} user={crop} onDelete={handleDelete} customFields={allCustomFields} />
 //             ))}
 //           </tbody>
 //         </table>
@@ -77,20 +162,27 @@
 
 // export default Crop_History;
 
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Crops from '../Crops/Crops';
 import './Crop_History.css';
 
 const URL = 'http://localhost:5000/CropR';
 
-const fetchHandler = async () => {
+const fetchHandler = async (token) => {
   try {
-    const res = await axios.get(URL);
+    const res = await axios.get(URL, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
     return res.data;
   } catch (error) {
     console.error('Error fetching data:', error);
+    if (error.response?.status === 401 || error.response?.status === 403) {
+      localStorage.removeItem('token');
+      return { error: 'Session expired. Please log in again.' };
+    }
     return { crops: [] };
   }
 };
@@ -98,21 +190,30 @@ const fetchHandler = async () => {
 function Crop_History() {
   const [crops, setCrops] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
-    fetchHandler()
-      .then((data) => setCrops(data.crops || []))
+    const token = localStorage.getItem('token');
+    fetchHandler(token)
+      .then((data) => {
+        if (data.error) {
+          setError(data.error);
+          navigate('/Login');
+        } else {
+          setCrops(data.crops || []);
+        }
+      })
       .finally(() => setLoading(false));
-  }, []);
+  }, [navigate]);
 
   const handleDelete = (id) => {
     setCrops((prevCrops) => prevCrops.filter((crop) => crop._id !== id));
   };
 
-  // Get all possible custom field names across all crops
   const allCustomFields = Array.from(
-    new Set(crops.flatMap(crop => Object.keys(crop.customFields || {})))
+    new Set(crops.flatMap((crop) => Object.keys(crop.customFields || {})))
   );
 
   return (
@@ -124,6 +225,7 @@ function Crop_History() {
       <Link to="/Crop_Add" className="add-btn">
         <button>ADD CROP DETAILS</button>
       </Link>
+      {error && <p className="error-message">{error}</p>}
       {loading ? (
         <p className="loading">Loading crops...</p>
       ) : crops.length > 0 ? (
@@ -142,7 +244,7 @@ function Crop_History() {
               <th>Expected Yield</th>
               <th>Weather Conditions</th>
               {allCustomFields.map((field) => (
-                <th key={field}>{field.replace(/_/g, " ")}</th>
+                <th key={field}>{field.replace(/_/g, ' ')}</th>
               ))}
               <th>Action</th>
             </tr>
@@ -161,3 +263,4 @@ function Crop_History() {
 }
 
 export default Crop_History;
+
