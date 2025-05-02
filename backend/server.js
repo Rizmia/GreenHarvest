@@ -563,25 +563,25 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-// Register endpoint
-app.post('/register', async (req, res) => {
-  const { name, gmail, password, cpassword, number } = req.body;
+// // Register endpoint
+// app.post('/register', async (req, res) => {
+//   const { name, gmail, password, cpassword, number } = req.body;
 
-  if (!name || !gmail || !password || !cpassword || !number) {
-    return res.status(400).json({ status: 'error', message: 'All fields are required' });
-  }
-  if (password !== cpassword) {
-    return res.status(400).json({ status: 'error', message: 'Passwords do not match' });
-  }
+//   if (!name || !gmail || !password || !cpassword || !number) {
+//     return res.status(400).json({ status: 'error', message: 'All fields are required' });
+//   }
+//   if (password !== cpassword) {
+//     return res.status(400).json({ status: 'error', message: 'Passwords do not match' });
+//   }
 
-  try {
-    await User.create({ name, gmail, password, cpassword, number });
-    res.json({ status: 'ok' });
-  } catch (err) {
-    console.error('Error in /register:', err.message);
-    res.status(500).json({ status: 'error', message: err.message });
-  }
-});
+//   try {
+//     await User.create({ name, gmail, password, cpassword, number });
+//     res.json({ status: 'ok' });
+//   } catch (err) {
+//     console.error('Error in /register:', err.message);
+//     res.status(500).json({ status: 'error', message: err.message });
+//   }
+// });
 
 // Farmer question endpoint
 app.post('/ask', async (req, res) => {
@@ -736,7 +736,44 @@ app.post('/ask', async (req, res) => {
         : language === 'tamil'
         ? `${cropName} பயிருக்கு பூச்சிகளை கட்டுப்படுத்த, கரிம பூச்சிக்கொல்லிகளை பயன்படுத்தவும் (உதா: neem oil).`
         : `To control pests in ${cropName}, use organic pesticides like neem oil.`;
-    } else {
+    }
+    else if (intent === 'TomatoPlanting') {
+            const crop = cropData.tomato;
+            reply = language === 'sinhala'
+              ? `තක්කාලි සිටුවීම සඳහා, අව්ව සහිත ස්ථානයක් තෝරා ගන්න, පස හොඳින් ජලය බැස යන බවත් කාබනික ද්‍රව්‍ය වලින් පොහොසත් බවත් සහතික කර ගනිමින් එය සකස් කරන්න, සහ බීජ පැල ගැඹුරට සිටුවන්න, මුල් වර්ධනය දිරිමත් කිරීම සඳහා කඳේ වැඩි කොටසක් වළලන්න. ශාක අතර ප්‍රමාණවත් පරතරයක් සහතික කරන්න (විවිධත්වය අනුව අඟල් 18-24 හෝ ඊට වැඩි).`
+              : language === 'tamil'
+              ? `தக்காளியை நடவு செய்ய, வெயில் படும் இடத்தைத் தேர்ந்தெடுத்து, மண்ணை நன்கு வடிகால் வசதியுடனும், கரிமப் பொருட்கள் நிறைந்ததாகவும் இருப்பதை உறுதிசெய்து, நாற்றுகளை ஆழமாக நடவும், வேர் வளர்ச்சியை ஊக்குவிக்க பெரும்பாலான தண்டுகளை புதைக்கவும். தாவரங்களுக்கு இடையில் போதுமான இடைவெளியை உறுதி செய்யவும் (வகையைப் பொறுத்து 18-24 அங்குலம் அல்லது அதற்கு மேல்).
+    
+   ` : `To plant tomatoes, choose a sunny location, prepare the soil to ensure good drainage and enrich it with organic matter, plant seedlings deeply, burying most of the stem to encourage root growth, and ensure adequate spacing between plants (18-24 inches or more depending on the variety).`; 
+  }
+  else if (intent === 'SoilManagement') {
+          reply = language === 'sinhala'
+            ? `ලෝම පස සාමාන්‍යයෙන් වැලි, රොන්මඩ සහ මැටි වල ක්‍රියාකාරීව සමාන දායකත්වයක් සහිත මධ්‍යම-වයනය සහිත පස ලෙස විස්තර කෙරේ. මෙම මධ්‍යම-වයනය සහිත පස බොහෝ විට කෘෂිකර්මාන්තය සඳහා වඩාත් සුදුසු යැයි සැලකේ, මන්ද ඒවා ගොවීන් විසින් පහසුවෙන් වගා කළ හැකි අතර බෝග වර්ධනය සඳහා ඉහළ ඵලදායිතාවයක් ලබා ගත හැකිය.
+  `
+            : language === 'tamil'
+            ? `களிமண்-அமைப்பு கொண்ட மண் பொதுவாக மணல், வண்டல் மற்றும் களிமண் ஆகியவற்றின் செயல்பாட்டு ரீதியாக சமமான பங்களிப்புகளுடன் நடுத்தர அமைப்பு கொண்டதாக விவரிக்கப்படுகிறது. இந்த நடுத்தர அமைப்பு கொண்ட மண் பெரும்பாலும் விவசாயத்திற்கு ஏற்றதாகக் கருதப்படுகிறது, ஏனெனில் அவை விவசாயிகளால் எளிதில் பயிரிடப்படுகின்றன மற்றும் பயிர் வளர்ச்சிக்கு அதிக உற்பத்தித் திறன் கொண்டவை.`
+            : `Loamy-textured soils are commonly described as medium textured with functionally-equal contributions of sand, silt, and clay. These medium-textured soils are often considered ideal for agriculture as they are easily cultivated by farmers and can be highly productive for crop growth.
+  `;} 
+  else if (intent === 'FertilizerAdvice') {
+    let cropName = dialogflowResponse.parameters.fields.Crop?.stringValue || question.split(' ').pop();
+    cropName = cropNameMapping[cropName] || cropName.toLowerCase();
+
+    if (cropName === 'tomato') {
+      reply = language === 'sinhala'
+        ? `තක්කාලි සඳහා නිවැරදි පොහොර ප්‍රමාණය තීරණය කිරීම සඳහා, ඔබේ පසෙහි පෝෂක මට්ටම් සහ pH අගය තේරුම් ගැනීමට පාංශු පරීක්ෂණයකින් ආරම්භ කරන්න. ඉන්පසු, තක්කාලි වලට පෝෂ්‍ය පදාර්ථ සමතුලිතතාවයක්, විශේෂයෙන් පොස්පරස් සහ සාමාන්‍යයෙන් ඕනෑවට වඩා නයිට්‍රජන් අවශ්‍ය නොවන බව මතක තබා ගනිමින්, පොහොර පැකේජ උපදෙස් අනුගමනය කරන්න. ශාකයේ වර්ධන අවධිය, පස වර්ගය සහ ඔබ කාබනික හෝ කෘතිම පොහොර භාවිතා කරන්නේද යන්න සලකා බලන්න.`
+        : language === 'tamil'
+        ? `தக்காளிக்கு சரியான அளவு உரத்தைத் தீர்மானிக்க, உங்கள் மண்ணின் ஊட்டச்சத்து அளவுகள் மற்றும் pH ஐப் புரிந்துகொள்ள மண் பரிசோதனையுடன் தொடங்கவும். பின்னர், தக்காளிக்கு ஊட்டச்சத்துக்கள், குறிப்பாக பாஸ்பரஸ், பொதுவாக அதிக நைட்ரஜன் தேவை என்பதை மனதில் கொண்டு, உரப் பொதி வழிமுறைகளைப் பின்பற்றவும். தாவரத்தின் வளர்ச்சி நிலை, மண் வகை மற்றும் நீங்கள் கரிம அல்லது செயற்கை உரங்களைப் பயன்படுத்துகிறீர்களா என்பதைக் கவனியுங்கள்.`
+        : `To determine the right amount of fertilizer for tomatoes, start with a soil test to understand your soil's nutrient levels and pH. Then, follow the fertilizer package instructions, keeping in mind that tomatoes need a balance of nutrients, especially phosphorus, and generally not too much nitrogen. Consider the plant's growth stage, soil type, and whether you're using organic or synthetic fertilizers. 
+`;
+    } else if (cropName === 'rice') {
+      reply = language === 'sinhala'
+        ? `වී සඳහා සුදුසු පොහොර ප්‍රමාණය තීරණය කිරීම සඳහා, එම ප්‍රදේශයේ ගොවීන් පාංශු විශ්ලේෂණය, බෝග සඳහා විශේෂිත අවශ්‍යතා සහ කෘෂිකර්ම අමාත්‍යාංශයේ නිර්දේශිත පිළිවෙත් සලකා බැලිය යුතුය. පාංශු පරීක්ෂාව මගින් නිශ්චිත පෝෂක ඌනතාවයන් අනාවරණය කළ හැකි අතර, බෝගයේ වර්ධන අවධිය සහ කෘෂිකර්ම දෙපාර්තමේන්තුවේ නවතම පොහොර නිර්දේශ සලකා බැලීමෙන් අස්වැන්න ප්‍රශස්ත කිරීමට සහ නාස්තිය අවම කිරීමට උපකාරී වේ.`
+        : language === 'tamil'
+        ? `நெல்லுக்கு ஏற்ற உர அளவை தீர்மானிக்க, அந்தந்த இடங்களில் உள்ள விவசாயிகள் மண் பகுப்பாய்வு, பயிர் சார்ந்த தேவைகள் மற்றும் வேளாண் அமைச்சகத்தின் பரிந்துரைக்கப்பட்ட நடைமுறைகளை கருத்தில் கொள்ள வேண்டும். மண் பரிசோதனை குறிப்பிட்ட ஊட்டச்சத்து குறைபாடுகளை வெளிப்படுத்தலாம், அதே நேரத்தில் பயிரின் வளர்ச்சி நிலை மற்றும் வேளாண் துறையின் சமீபத்திய உர பரிந்துரைகளை கருத்தில் கொள்வது மகசூலை மேம்படுத்தவும், வீணாவதை குறைக்கவும் உதவும்.`
+        : `To determine the appropriate fertilizer quantity for rice, farmers in thir location should consider soil analysis, crop-specific needs, and the recommended practices from the Ministry of Agriculture. Soil testing can reveal specific nutrient deficiencies, while considering the crop's growth stage and the latest fertilizer recommendations from the Department of Agriculture can help optimize yield and minimize waste. `;
+    } 
+  }
+   else {
       reply = dialogflowResponse?.fulfillmentText || (
         language === 'sinhala'
           ? 'මට තේරුණේ නැහැ, කරුණාකර ආයෙත් අහන්න.'
