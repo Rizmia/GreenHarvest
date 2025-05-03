@@ -64,7 +64,8 @@ import Main_Home from './Components/Main_Home/Main_Home';
 import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/Login/Login';
 import Crop_Expenses from './Components/Crop_Expenses/Crop_Expenses';
-
+import Visualization from './Components/Visualization/Visualization';
+// Inside your router setup
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
   return token ? children : <Navigate to="/Login" />;
@@ -97,6 +98,11 @@ function App() {
           path="/Crop_Expenses"
           element={<ProtectedRoute><Crop_Expenses /></ProtectedRoute>}
         />
+      <Route
+          path="/Visualization"
+          element={<ProtectedRoute><Visualization /></ProtectedRoute>}
+        />
+
       </Routes>
     </div>
   );
