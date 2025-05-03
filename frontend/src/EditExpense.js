@@ -47,8 +47,9 @@ const EditExpense = () => {
       <div style={styles.formContainer}>
         <h3 style={styles.title}>Edit Expense</h3>
         <form onSubmit={handleSubmit} style={styles.form}>
-          {Object.keys(expense).map((key) => (
-            key !== "_id" && (
+        {Object.keys(expense).map((key) => (
+  key !== "_id" && key !== "__v" && (
+
               <label key={key} style={styles.label}>
                 {key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}: 
                 {key === "description" ? (
