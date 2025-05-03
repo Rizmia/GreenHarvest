@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Crop_Add.css';
+import Navbar from '../Navbar/Navbar';
 
 function Crop_Add() {
   const navigate = useNavigate();
@@ -204,6 +205,9 @@ function Crop_Add() {
   };
 
   return (
+
+    <>
+    <Navbar/>
     <div className="crop-add-page">
       <Link to="/Crop_History" className="crop-add-back-btn">
         <button>Back</button>
@@ -337,6 +341,7 @@ function Crop_Add() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
