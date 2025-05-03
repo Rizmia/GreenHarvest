@@ -75,7 +75,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const router = require("./Routes/CropR_Routes");
-const User = require("./Model/RegisterModel"); // Import the Register model
+const User  = require("./Model/RegisterModel"); // Import the Register model
 
 const app = express();
 
