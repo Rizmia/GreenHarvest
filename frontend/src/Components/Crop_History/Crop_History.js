@@ -152,7 +152,7 @@ function Crop_History() {
       <Link to="/Visualization" className="visualization-btn">
         <button>View Visualizations</button>
       </Link>
-      <h1>Crop History</h1>
+      <h1 className='CN1'>Crop History</h1>
       <div className="search-container">
         <input
           type="text"

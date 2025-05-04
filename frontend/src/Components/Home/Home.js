@@ -82,9 +82,7 @@ function Home() {
           <Link to="/Crop_Add">
             <button className="home-btn add-btn">Add Crop Details</button>
           </Link>
-          <Link to="/Crop_Expenses">
-            <button className="home-btn expenses-btn">Crop Expenses</button>
-          </Link>
+      
           <button className="home-btn logout-btn" onClick={handleLogout}>
             Logout
           </button>

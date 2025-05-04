@@ -14,6 +14,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
+  position: relative;
 }
 
 .login-form h1 {
@@ -48,6 +49,21 @@
   background-color: #45a049;
 }
 
+.back-btnLogin {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back-btn:hover {
+  background-color: #f57c00;
+}
+
 .error-message {
   color: red;
   font-size: 12px;
@@ -65,4 +81,91 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.forgot-password span {
+  color: #2196f3;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.forgot-password span:hover {
+  color: #1976d2;
+}
+
+.signup-message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.signup-message a {
+  color: #2196f3;
+  text-decoration: underline;
+}
+
+.signup-message a:hover {
+  color: #1976d2;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-buttons button {
+  width: 45%;
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.9;
 }
