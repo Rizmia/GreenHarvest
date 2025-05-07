@@ -90,14 +90,14 @@
 
 .search-input {
   padding: 10px 40px 12px 40px;
-  width: 300px;
+  width: 450px;
   border: none;
   border-radius: 25px;
   font-size: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   background-color: white;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 1 1.397-1.398l3.891 3.89a.5.5 0 1 1-.708.708l-3.891-3.89a6.5 6.5 0 0 1-1.689 0zM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="gray" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 1 1.397-1.398l3.891 3.89a.5.5 0 1 1-.708.708l-3.891-3.89a6.5 6.5 0 0 1-1.689 0zM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z"/></svg>');
   background-repeat: no-repeat;
   background-position: 10px center;
   background-size: 20px 20px;

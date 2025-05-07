@@ -65,6 +65,7 @@ import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/Login/Login';
 import Crop_Expenses from './Components/Crop_Expenses/Crop_Expenses';
 import Visualization from './Components/Visualization/Visualization';
+import ContactUs from './Components/ContactUs/ContactUs';
 // Inside your router setup
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -101,6 +102,10 @@ function App() {
       <Route
           path="/Visualization"
           element={<ProtectedRoute><Visualization /></ProtectedRoute>}
+        />
+         <Route
+          path="/ContactUs"
+          element={<ProtectedRoute><ContactUs /></ProtectedRoute>}
         />
 
       </Routes>

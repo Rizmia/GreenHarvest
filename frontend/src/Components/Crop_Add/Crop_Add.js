@@ -245,7 +245,7 @@ function Crop_Add() {
 
   return (
     <>
-      <Navbar />
+  
       <div className="crop-add-page">
         <Link to="/Crop_History" className="crop-add-back-btn">
           <button>Back</button>

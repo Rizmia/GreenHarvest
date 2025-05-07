@@ -14,6 +14,10 @@ function Main_Home() {
     navigate('/Login');
   };
 
+  const handleContactUsClick = () => {
+    navigate('/ContactUs');
+  };
+
   return (
     <div className="main-home-container">
       <video className="background-video" src={backgroundVideo} autoPlay muted loop />
@@ -35,7 +39,7 @@ function Main_Home() {
             <p>We provide tools to help farmers manage their agricultural data efficiently.</p>
           </div>
           <div className="footer-section">
-            <h3>Contact Us</h3>
+            <button onClick={handleContactUsClick}>Contact Us</button>
             <p>Email: support@croprecords.com</p>
             <p>Phone: +94 123 456 789</p>
           </div>
